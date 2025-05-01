@@ -1,6 +1,7 @@
+import 'package:flutter/material.dart';
 import 'package:todo_flutter/models/coffee.dart';
 
-class CoffeeShop {
+class CoffeeShop extends ChangeNotifier{
   // coffee data
   final List<Coffee> _data = [
     // black coffee
