@@ -39,6 +39,9 @@ class _CartPageState extends State<CartPage> {
             // heading
             Text("Your Cart",style: TextStyle(fontSize: 18),),
 
+            // some space
+            const SizedBox(height: 20,),
+
             // list of items
             Expanded(child: ListView.builder(
               itemCount: value.userCart.length,
@@ -51,8 +54,25 @@ class _CartPageState extends State<CartPage> {
                 onPressed:() => removeFromCart(eachCoffee), 
                 icon: Icon(Icons.delete)
               );
-            },))
+            },
+            )
+            ),
 
+            // pay button
+            GestureDetector(
+              onTap: (){}, // payment function
+              child: Container(
+                decoration: BoxDecoration(
+                  color: Colors.brown,
+                  borderRadius: BorderRadius.circular(14)
+                ),
+                width: double.infinity,
+                child: Padding(
+                  padding: const EdgeInsets.all(18.0),
+                  child: Center(child: Text("Pay now", style: TextStyle(color: Colors.grey.shade100, fontSize: 16),)),
+                ),
+              ),
+            )
           ],
         ),
       ),
