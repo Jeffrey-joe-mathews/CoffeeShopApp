@@ -15,6 +15,16 @@ class _ShopPageState extends State<ShopPage> {
 
   void addToCart (Coffee coffee) {
     Provider.of<CoffeeShop>(context, listen: false).addItem(coffee);
+
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text("added ${coffee.name} to cart"),
+        duration: Duration(seconds: 2),
+        behavior: SnackBarBehavior.floating,
+        backgroundColor: Colors.brown,
+        showCloseIcon: true,
+      )
+    );
   }
 
   @override

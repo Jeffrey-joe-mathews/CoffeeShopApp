@@ -4,9 +4,9 @@ import 'package:todo_flutter/models/coffee.dart';
 class CoffeeTile extends StatelessWidget {
 
   final Coffee coffee;
-  void Function()? onPressed;
+  final void Function()? onPressed;
   final Widget icon;
-  CoffeeTile({super.key, required this.coffee, required this.onPressed, required this.icon});
+  const CoffeeTile({super.key, required this.coffee, required this.onPressed, required this.icon});
 
   @override
   Widget build(BuildContext context) {

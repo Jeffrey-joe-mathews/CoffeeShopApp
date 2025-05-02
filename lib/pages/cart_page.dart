@@ -16,6 +16,16 @@ class _CartPageState extends State<CartPage> {
   // remove items from cart
   void removeFromCart (Coffee coffee) {
     Provider.of<CoffeeShop>(context, listen: false).removeItem(coffee);
+
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text("${coffee.name} removed from cart"),
+        duration: Duration(seconds: 2),
+        behavior: SnackBarBehavior.floating,
+        backgroundColor: Colors.red,
+        showCloseIcon: true,
+      )
+    );
   }
 
   @override
