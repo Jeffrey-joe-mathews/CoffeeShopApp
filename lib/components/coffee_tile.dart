@@ -5,7 +5,8 @@ class CoffeeTile extends StatelessWidget {
 
   final Coffee coffee;
   void Function()? onPressed;
-  CoffeeTile({super.key, required this.coffee, required this.onPressed});
+  final Widget icon;
+  CoffeeTile({super.key, required this.coffee, required this.onPressed, required this.icon});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +21,7 @@ class CoffeeTile extends StatelessWidget {
         leading: Image.asset(coffee.imagePath),
         title: Text(coffee.name),
         subtitle: Text(coffee.price.toString()),
-        trailing: IconButton(onPressed: onPressed, icon: Icon(Icons.add_box)),
+        trailing: IconButton(onPressed: onPressed, icon: icon),
       ),
     );
   }
